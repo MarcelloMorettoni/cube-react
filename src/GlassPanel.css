@@ -1,0 +1,30 @@
+.glass-panel {
+  position: fixed;
+  top: 50%;
+  right: 15rem;
+  transform: translateY(-50%);
+  width: 260px;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  color: white;
+  font-family: system-ui, sans-serif;
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+.glass-panel h3 {
+  margin: 0 0 0.5rem;
+  color: #bba2ff;
+  font-size: 1.2rem;
+}
+
+.glass-panel p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  opacity: 0.9;
+}

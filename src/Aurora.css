@@ -1,0 +1,10 @@
+.aurora-container {
+  position: fixed;       /* stays behind, covers the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;            /* sits under your R3F canvas */
+  pointer-events: none;  /* lets you still orbit/drag the cube */
+  overflow: hidden;
+}

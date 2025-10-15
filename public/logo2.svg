@@ -1,0 +1,58 @@
+<svg width="192" height="192" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Aurora Glass Cube Logo">
+  <defs>
+    <!-- Aurora-like gradients -->
+    <linearGradient id="gradTop" x1="40" y1="24" x2="216" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6E4EFF"/>
+      <stop offset="0.5" stop-color="#BBA2FF"/>
+      <stop offset="1" stop-color="#4A3AFF"/>
+    </linearGradient>
+    <linearGradient id="gradLeft" x1="40" y1="76" x2="128" y2="208" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3C2A7A" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#7C6BCF" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="gradRight" x1="128" y1="100" x2="216" y2="208" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#BBA2FF" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#2E1FBF" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <!-- Subtle reflections -->
+    <linearGradient id="reflection" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Frosted glass blur -->
+    <filter id="glassBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+      <feBlend in="SourceGraphic" in2="blur" mode="overlay"/>
+    </filter>
+
+    <!-- Highlight lines -->
+    <linearGradient id="edge" x1="56" y1="60" x2="200" y2="172" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Optional glow backdrop -->
+  <circle cx="128" cy="128" r="110" fill="url(#gradTop)" opacity="0.05"/>
+
+  <!-- Glassy cube -->
+  <g filter="url(#glassBlur)">
+    <!-- Top -->
+    <polygon points="128,34 200,74 128,114 56,74" fill="url(#gradTop)" fill-opacity="0.6"/>
+    <!-- Left -->
+    <polygon points="56,74 128,114 128,190 56,150" fill="url(#gradLeft)" fill-opacity="0.7"/>
+    <!-- Right -->
+    <polygon points="200,74 128,114 128,190 200,150" fill="url(#gradRight)" fill-opacity="0.7"/>
+
+    <!-- Reflection overlay -->
+    <polygon points="128,34 200,74 128,114 56,74" fill="url(#reflection)" opacity="0.2"/>
+
+    <!-- Edges -->
+    <polyline points="56,74 128,34 200,74 128,114 56,74" fill="none" stroke="url(#edge)" stroke-width="1.5"/>
+    <polyline points="56,150 56,74 128,114 128,190 56,150" fill="none" stroke="url(#edge)" stroke-width="1.5"/>
+    <polyline points="200,150 200,74 128,114 128,190 200,150" fill="none" stroke="url(#edge)" stroke-width="1.5"/>
+  </g>
+</svg>
+

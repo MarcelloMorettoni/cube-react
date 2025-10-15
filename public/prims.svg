@@ -1,0 +1,76 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Aurora Glass Prism">
+  <defs>
+    <!-- Aurora palette (tweak these stops to recolor) -->
+    <linearGradient id="auroraLeft" x1="26" y1="172" x2="116" y2="72" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00C2FF"/>
+      <stop offset="1" stop-color="#6E4EFF"/>
+    </linearGradient>
+    <linearGradient id="auroraTop" x1="128" y1="28" x2="128" y2="132" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#BBA2FF"/>
+      <stop offset="1" stop-color="#8A6FFF"/>
+    </linearGradient>
+    <linearGradient id="auroraRight" x1="140" y1="72" x2="230" y2="172" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A074FF"/>
+      <stop offset="1" stop-color="#FF5B7E"/>
+    </linearGradient>
+
+    <!-- Edge highlight -->
+    <linearGradient id="edge" x1="56" y1="56" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.12"/>
+    </linearGradient>
+
+    <!-- Soft outer glow -->
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Face reflections -->
+    <linearGradient id="glassSheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Optional faint backdrop circle (remove if not needed) -->
+  <circle cx="128" cy="128" r="110" fill="url(#auroraTop)" opacity="0.06"/>
+
+  <!-- Prism group -->
+  <g filter="url(#softGlow)">
+    <!-- Top face -->
+    <polygon
+      points="128,36 212,184 44,184"
+      fill="url(#auroraTop)"
+      fill-opacity="0.75"/>
+
+    <!-- Left face -->
+    <polygon
+      points="128,36 44,184 128,184"
+      fill="url(#auroraLeft)"
+      fill-opacity="0.7"/>
+
+    <!-- Right face -->
+    <polygon
+      points="128,36 212,184 128,184"
+      fill="url(#auroraRight)"
+      fill-opacity="0.7"/>
+
+    <!-- Central vertical light seam -->
+    <line x1="128" y1="36" x2="128" y2="184" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1.6"/>
+
+    <!-- Edge highlights -->
+    <polyline points="44,184 128,36 212,184" fill="none" stroke="url(#edge)" stroke-width="1.6"/>
+    <line x1="44" y1="184" x2="128" y2="184" stroke="url(#edge)" stroke-width="1.4"/>
+    <line x1="128" y1="184" x2="212" y2="184" stroke="url(#edge)" stroke-width="1.4"/>
+
+    <!-- Sheen overlays (subtle reflections) -->
+    <polygon points="128,36 44,184 128,184" fill="url(#glassSheen)" opacity="0.18"/>
+    <polygon points="128,36 212,184 128,184" fill="url(#glassSheen)" opacity="0.12"/>
+    <polygon points="128,36 212,184 44,184" fill="url(#glassSheen)" opacity="0.10"/>
+  </g>
+</svg>
+
